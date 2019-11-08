@@ -5,7 +5,7 @@ module.exports = {
     
     //CHAMA TODOS OS PRATOS DE DETERMINADO RESTAURANTE
     async index(req,res){
-        const { user_id } = req.query;
+        const { user_id } = req.headers;
         const allFoods = await Food.find({user : user_id});
         return res.json(allFoods);
     },

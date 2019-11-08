@@ -4,7 +4,7 @@ const UserSchema =  new mongooese.Schema({
     name: String,
     email: String,
     password: String,
-    CNPJ: Number,
+    cnpj: Number,
 });
 
 module.exports = mongooese.model('User', UserSchema);

@@ -61,7 +61,7 @@ body, input, button {
 .content button.btn{
   border: 0;
   border-radius: 2px;
-  width: 100px;
+  width: 150px;
   height: 42px;
   padding: 0 20px;
   font-size: 16px;
@@ -69,4 +69,9 @@ body, input, button {
   background: red;
   color: white;
   cursor: pointer;
+  align-self: center;
+  
+}
+.content button.btn:hover{
+  background: rgb(221, 0, 0);
 }

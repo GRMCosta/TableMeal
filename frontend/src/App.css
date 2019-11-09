@@ -31,9 +31,9 @@ body, input, button {
 
 .content{
   width: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.664);
   margin-top: 50px;
-  border-radius: 4px;
+  border-radius: 20px;
   padding: 30px;
 }
 
@@ -52,7 +52,7 @@ body, input, button {
 .content form input{
   margin-bottom: 20px;
   border: 1px solid;
-  border-radius: 2px;
+  border-radius: 20px;
   height: 45px;
   padding: 0 15px;
   font-size: 16px;
@@ -60,7 +60,7 @@ body, input, button {
 
 .content button.btn{
   border: 0;
-  border-radius: 2px;
+  border-radius: 100px;
   width: 150px;
   height: 42px;
   padding: 0 20px;

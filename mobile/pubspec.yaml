@@ -1,4 +1,4 @@
-name: teste_dart
+name: mobile
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -17,7 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  http: ^0.12.0+2
   mongo_dart: ^0.4.0
+  json_api: ^2.0.3
   flutter:
     sdk: flutter
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste_dart/Tabs/home_tab.dart';
-import 'package:teste_dart/widgets/custom_drawer.dart';
+import 'package:mobile/Tabs/home_tab.dart';
+import 'package:mobile/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

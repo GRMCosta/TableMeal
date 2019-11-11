@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +32,6 @@ class LoginScreen extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(hintText: "E-mail"),
               keyboardType: TextInputType.emailAddress,
-
-
-              // arrumar o validator e continuar
-              
               validator: (text) {
                 if (text.isEmpty || text.contains("@"))
                   return "E-mail inválido";
@@ -48,6 +44,10 @@ class LoginScreen extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(hintText: "Senha"),
               obscureText: true,
+              validator: (text) {
+                if (text.isEmpty || text.length < 6) return "Senha Inválida";
+                return null;
+              },
             ),
             Align(
               alignment: Alignment.centerRight,
@@ -74,7 +74,9 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textColor: Colors.white,
                 color: Theme.of(context).primaryColor,
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {}
+                },
               ),
             ),
           ],

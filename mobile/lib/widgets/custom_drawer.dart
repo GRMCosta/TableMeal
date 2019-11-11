@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_dart/tiles/drawer_tile.dart';
+import 'package:mobile/tiles/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
 

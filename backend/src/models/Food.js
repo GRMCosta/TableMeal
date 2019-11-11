@@ -11,6 +11,14 @@ const FoodSchema = new mongooese.Schema({
         ref: 'User'
     }
 
+}, {
+    toJSON: {
+        virtuals: true,
+    }
+});
+
+FoodSchema.virtual('thumbnail_url').get(function(){
+    return `http://localhost:9999/files/${this.thumbnail}`
 })
 
 module.exports = mongooese.model('Food', FoodSchema);

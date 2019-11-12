@@ -26,6 +26,7 @@ export default function Food(){
                   </li>  
                 ))}
             </ul>
+            
 
             <Link to="/new">
                 <button className="btn">Adicionar um novo Prato</button> 

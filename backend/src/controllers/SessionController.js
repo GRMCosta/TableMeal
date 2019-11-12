@@ -3,10 +3,12 @@ const User = require('../models/User');
 
 module.exports = {
 
-    //PEGA TODOS OS RESTAURANTES
+    //PEGA UM RESTAURANTE
     async index(req,res){
-        const names = await User.find();
-        return res.json(names);
+        const { name, password } = req.query;
+        const restaurant = await User.findOne({name, password
+        });
+        return res.json(restaurant);
     },
 
     //CRIA UM NOVO RESTAURANTE
@@ -25,4 +27,6 @@ module.exports = {
 
         return res.json(user);
     }
+
+    
 };

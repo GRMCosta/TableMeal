@@ -1,13 +1,11 @@
 import React,{ useState } from 'react';
+
 import api from '../../services/api';
+
 
 export default function Login({ history }) {
     const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-
-
-
-
   async function handleSubmit(event){
     event.preventDefault();
     
@@ -25,7 +23,10 @@ export default function Login({ history }) {
       console.log("Logou!!");
       history.push('/food');
     }
+    
   }
+
+
     return (
         <>
             <form onSubmit={handleSubmit}>

@@ -11,7 +11,7 @@ function App() {
     <>
     <NavBar />
     <div className="container">
-      <img className="Mylogo" src={logo} alt="TableMeal"/>
+      <img src={logo} alt="TableMeal"/>
       
       <div className="content">
         <Routes />

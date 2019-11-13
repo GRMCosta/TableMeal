@@ -8,7 +8,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Criar Conta",
+          "Criar Conta", style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         backgroundColor: Colors.red,
@@ -67,13 +67,13 @@ class SignUpScreen extends StatelessWidget {
               height: 44.0,
               child: RaisedButton(
                 child: Text(
-                  "Entrar",
+                  "Criar Conta",
                   style: TextStyle(
                     fontSize: 18.0,
                   ),
                 ),
                 textColor: Colors.white,
-                color: Theme.of(context).primaryColor,
+                color: Colors.red,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {}
                 },

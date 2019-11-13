@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased !important; 
 }
 
+
 body, input, button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -29,8 +30,13 @@ body, input, button {
   align-items: center;
 }
 
+.container img {
+  width: 20%;
+  height: auto;
+}
+
 .content{
-  width: 100%;
+  width: 50%;
   background: rgba(255, 255, 255, 0.664);
   margin-top: 50px;
   border-radius: 20px;
@@ -54,6 +60,7 @@ body, input, button {
   border: 1px solid;
   border-radius: 20px;
   height: 45px;
+  
   padding: 0 15px;
   font-size: 16px;
 }
@@ -69,6 +76,7 @@ body, input, button {
   color: white;
   cursor: pointer;
   align-self: center;
+  width: 40%;
   
 }
 .content button.btn:hover{

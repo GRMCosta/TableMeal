@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import api from '../../services/api';
 
 export default function Login({ history }) {
-    const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cnpj, setCnpj] = useState('');

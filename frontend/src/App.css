@@ -55,7 +55,17 @@ body, input, button {
   margin-bottom: 8px;
 }
 
-.content form input{
+.content form input {
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 20px;
+  height: 45px;
+  
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.content form select {
   margin-bottom: 20px;
   border: 1px solid;
   border-radius: 20px;

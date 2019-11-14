@@ -67,18 +67,9 @@ nav h1{
     font-family: 'Raleway','Arial';
     padding-top: 20px;
     padding-right: 20px;
-}
-
-.container-navbar span a{
-    color: white;
-    text-decoration: none;
     cursor: pointer;
 }
 
-.container-navbar span a:visited{
-    color: white;
-    text-decoration: none;
-}
 
 .container-navbar span:nth-child(3){
     padding-left: 25px;

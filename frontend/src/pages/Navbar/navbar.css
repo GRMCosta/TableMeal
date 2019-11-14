@@ -1,17 +1,6 @@
-@font-face {
-    font-family: 'Raleway';
-    src: url('../../assets/fonts/Raleway-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Raleway-light';
-    src: url('../../assets/fonts/Raleway-Light.ttf');
-}
-  
-
 nav{
     position: fixed;
-    background-color:#692A6F;
+    background-color: rgb(97, 0, 0);
     width: 100%;
     height: 60px;
     display:flex;
@@ -19,19 +8,12 @@ nav{
     top:0;
 }
 
-nav img#logo{
-    width: 57px;
-    height: 57px;
-    margin-top: 3px;
-    margin-left: 16px;
-}
-
 nav h1{
     color: white;
     padding-left: 15px;
     font-size: 36px;
     letter-spacing: 2px;   
-    font-family: 'Raleway','Arial';
+    font-family: 'Arial';
     padding-top: 10px;
 }
 
@@ -90,6 +72,7 @@ nav h1{
 .container-navbar span a{
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .container-navbar span a:visited{

@@ -31,12 +31,12 @@ body, input, button {
 }
 
 .container img {
-  width: 20%;
+  width: 40%;
   height: auto;
 }
 
 .content{
-  width: 50%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.664);
   margin-top: 50px;
   border-radius: 20px;

@@ -86,9 +86,33 @@ body, input, button {
   color: white;
   cursor: pointer;
   align-self: center;
-  width: 40%;
+  width: 50%;
   
 }
 .content button.btn:hover{
   background: rgb(221, 0, 0);
+}
+
+.sideByside{
+  flex: 1;
+  flex-Direction: 'row';
+  justify-Content: 'space-between';
+}
+
+.content button.back{
+  border: 0;
+  border-radius: 100px;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: rgb(114, 114, 114);
+  color: white;
+  cursor: pointer;
+  align-self: center;
+  width: 50%;
+}
+
+.content button.back:hover{
+  background: rgb(82, 82, 82);
 }

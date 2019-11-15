@@ -40,6 +40,9 @@ export default function New({ history }) {
     function sair() {
         history.push('/');
     }
+    function back() {
+        history.push('/food');
+    }
 
     return (
         <>
@@ -88,7 +91,11 @@ export default function New({ history }) {
                             <option value="Sobremesa">Sobremesa</option>
                             <option value="Refrigerante">Refrigerante</option>
                         </select>
+                        <div className="sideByside">
+                        <button onClick={back} className="back">Voltar</button>
                         <button type="submit" className="btn">Cadastrar Prato</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

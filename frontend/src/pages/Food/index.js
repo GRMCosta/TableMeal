@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import NavBar from '../Navbar'
 import logo from '../../assets/logo.png'
 import './styles.css';
 
-export default function Food({history}) {
+export default function Food({ history }) {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
         async function loadFoods() {
@@ -18,16 +17,19 @@ export default function Food({history}) {
         loadFoods();
     }, []);
 
-    function sair(){
+    function sair() {
         history.push('/');
-      }
+    }
+    function newFood() {
+        history.push('/new');
+    }
 
     return (
         <>
 
-            <NavBar sair={() => sair()}/>
+            <NavBar sair={() => sair()} />
             <div className="container">
-                <img src={logo} alt="TableMeal" />
+                <img src={logo} alt="TableMeal" onClick={newFood}/>
 
                 <div className="content">
 
@@ -41,11 +43,6 @@ export default function Food({history}) {
                             </li>
                         ))}
                     </ul>
-
-
-                    <Link to="/new">
-                        <button className="btn">Adicionar um novo Prato</button>
-                    </Link>
                 </div>
             </div>
         </>

@@ -25,3 +25,31 @@ ul.food-list li strong {
     color: black;
 }
 
+div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;
+}
+div.show-image:hover img {
+    display: block;
+}
+div.show-image img {
+    position:absolute;
+    display:none;
+    width: 15%;
+  height: auto;
+}
+div.show-image img.delete {
+    top: -5%;
+    right: -5%;
+    cursor: pointer;
+}
+
+.container img.addFoddImage{
+    width: 40%;
+    height: auto;
+    cursor: pointer;
+    color: brown;
+}
+  
+

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import NavBar from '../Navbar'
 import logo from '../../assets/logo.png'
+import logodelete from '../../assets/delete.svg';
 import './styles.css';
 
 export default function Food({ history }) {
@@ -13,8 +14,10 @@ export default function Food({ history }) {
                 headers: { user_id }
             });
             setFoods(response.data);
+
         }
         loadFoods();
+
     }, []);
 
     function sair() {
@@ -24,20 +27,37 @@ export default function Food({ history }) {
         history.push('/new');
     }
 
+    async function removeFood(name) {
+        const newFoods = foods.filter((food) => {
+            return food.name !== name;
+        });
+        setFoods(newFoods);
+        const response = await api.delete('/food', {
+            params: {
+                name: name
+            }
+          });
+        console.log(response);
+    }
+
+
     return (
         <>
 
             <NavBar sair={() => sair()} />
             <div className="container">
-                <img src={logo} alt="TableMeal" onClick={newFood}/>
+                <img className="addFoddImage" src={logo} alt="TableMeal" onClick={newFood} />
 
                 <div className="content">
 
 
                     <ul className="food-list">
-                        {foods.map(food => (
+                        {foods.map((food) => (
                             <li key={food._id}>
-                                <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
+                                <div class="show-image">
+                                    <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
+                                    <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
+                                </div>
                                 <strong>{food.name}</strong>
                                 <span>{food.price ? `R$ ${food.price}` : `GRATUITO`}</span>
                             </li>

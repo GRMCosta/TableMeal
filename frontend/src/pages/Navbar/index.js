@@ -3,13 +3,13 @@ import './navbar.css'
 
 export default function Navbar(props) {
 
-    const name = localStorage.getItem('name')
+    const name = sessionStorage.getItem('name')
     function showUser() {
         if (name)
             return (
                 <>
                     <span>{name}</span>
-                    <span onClick={() =>  {localStorage.clear(); props.sair() }}>Sair</span>
+                    <span onClick={() =>  {sessionStorage.clear(); props.sair() }}>Sair</span>
                 </>
             )
         else

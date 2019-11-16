@@ -20,8 +20,8 @@ export default function Login({ history }) {
       cnpj
     });
     const { _id } = response.data;
-    localStorage.setItem('user', _id);
-    localStorage.setItem('name', name);
+    sessionStorage.setItem('user', _id);
+    sessionStorage.setItem('name', name);
     history.push('/food');
   }
 

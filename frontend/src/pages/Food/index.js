@@ -9,7 +9,7 @@ export default function Food({ history }) {
     const [foods, setFoods] = useState([]);
     useEffect(() => {
         async function loadFoods() {
-            const user_id = localStorage.getItem('user');
+            const user_id = sessionStorage.getItem('user');
             const response = await api.get('/food', {
                 headers: { user_id }
             });

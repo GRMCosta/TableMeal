@@ -21,8 +21,8 @@ export default function Login({ history }) {
     }
     else {
       const { _id } = response.data;
-      localStorage.setItem('user', _id);
-      localStorage.setItem('name', name);
+      sessionStorage.setItem('user', _id);
+      sessionStorage.setItem('name', name);
       console.log("Logou!!");
       history.push('/food');
     }

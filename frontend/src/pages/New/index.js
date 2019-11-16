@@ -24,7 +24,7 @@ export default function New({ history }) {
         event.preventDefault();
 
         const data = new FormData();
-        const user_id = localStorage.getItem('user');
+        const user_id = sessionStorage.getItem('user');
 
         data.append('thumbnail', thumbnail);
         data.append('name', name);

@@ -75,7 +75,9 @@ class SignUpScreen extends StatelessWidget {
                 textColor: Colors.white,
                 color: Colors.red,
                 onPressed: () {
-                  if (_formKey.currentState.validate()) {}
+                  if (_formKey.currentState.validate()) {
+
+                  }
                 },
               ),
             ),

@@ -26,7 +26,7 @@ export default function Login({ history }) {
   }
 
   function register(){
-    history.push('/');
+    history.push('/register');
   }
   function login(){
     history.push('/login');

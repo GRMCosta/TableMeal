@@ -8,7 +8,8 @@ export default function Navbar(props) {
         if (name)
             return (
                 <>
-                    <span>{name}</span>
+                    <span onClick={() =>  {props.cardapio()}}>Cardapio</span>
+                    <span onClick={() =>  {props.pedidos()}}>Pedidos</span>
                     <span onClick={() =>  {sessionStorage.clear(); props.sair() }}>Sair</span>
                 </>
             )

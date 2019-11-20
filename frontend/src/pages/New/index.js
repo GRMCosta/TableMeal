@@ -38,7 +38,13 @@ export default function New({ history }) {
     }
 
     function sair() {
-        history.push('/');
+        history.push('/login');
+    }
+    function cardapio() {
+        history.push('/food');
+    }
+    function pedidos() {
+        history.push('/orders');
     }
     function back() {
         history.push('/food');
@@ -46,7 +52,7 @@ export default function New({ history }) {
 
     return (
         <>
-            <NavBar sair={() => sair()} />
+            <NavBar sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
             <div className="container">
                 <img src={logo} alt="TableMeal" />
 

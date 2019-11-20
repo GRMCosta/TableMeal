@@ -13,8 +13,14 @@ module.exports = {
 //
     //CRIAR UM NOVO PEDIDO
     async store(req, res){
+        var allFoods;
+        var objects = {};
         const { table, foods } = req.body;
-        const allFoods = await Food.find({_id: {$in: foods}});
+        await Food.find({_id: {$in: foods}}, function(err, array){
+            array.forEach(o => objects[o._id] = o);
+            allFoods = foods.map(id => objects[id]);
+        });
+
 
 
         const order = await Order.create({

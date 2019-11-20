@@ -12,6 +12,8 @@ const upload = multer(uploadConfig);
 routes.get('/sessions', SessionController.index);
 routes.post('/sessions', SessionController.store);
 
+
+routes.get('/clients', ClientController.index);
 routes.post('/clients', ClientController.store);
 
 routes.get('/food', upload.single('thumbnail'), FoodController.index);

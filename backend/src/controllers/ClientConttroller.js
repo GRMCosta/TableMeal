@@ -1,6 +1,14 @@
 const Client = require('../models/Client');
 
 module.exports = {
+
+    async index(req,res){
+        const { name } = req.query;
+        const client = await Client.find({ name });
+        return res.json(client);
+    },
+
+
     async store(req, res){
         const{ name, email, password, cpf} = req.body;
 

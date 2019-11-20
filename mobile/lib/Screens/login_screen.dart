@@ -4,7 +4,7 @@ import 'package:mobile/Screens/signup_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class LoginScreen extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
+ static final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +54,7 @@ class LoginScreen extends StatelessWidget {
                   height: 16.0,
                 ),
                 TextFormField(
+
                   decoration: InputDecoration(hintText: "Senha"),
                   obscureText: true,
                   validator: (text) {

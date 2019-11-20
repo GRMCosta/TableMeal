@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
-  final _formKey = GlobalKey<FormState>();
+  static final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +78,7 @@ class SignUpScreen extends StatelessWidget {
                   if (_formKey.currentState.validate()) {
 
                   }
+
                 },
               ),
             ),

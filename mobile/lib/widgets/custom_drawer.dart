@@ -16,10 +16,10 @@ class CustomDrawer extends StatelessWidget {
           gradient: LinearGradient(
               colors: [
                 Colors.red,
-                Colors.white,
+                Colors.pink,
               ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter
+              begin: Alignment.center,
+              end: Alignment.bottomCenter,
           )
       ),
     );

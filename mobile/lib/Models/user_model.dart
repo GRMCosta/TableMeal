@@ -6,10 +6,8 @@ class UserModel extends Model {
   bool isLoading = false;
   Map<String, dynamic> userData = Map();
 
-  void signUp(Map<String, dynamic> userData, String pass,
-      VoidCallback onSuccess, VoidCallback onFailed) {
-    isLoading = true;
-    notifyListeners();
+  void signUp() {
+
   }
 
   Future signIn() async {

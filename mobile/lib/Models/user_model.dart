@@ -25,10 +25,9 @@ class UserModel extends Model {
 
     createPost(post).then((response) {
       if (response.statusCode > 200) {
-        print(response);
-        onSuccess();
         isLoading = false;
         notifyListeners();
+        onSuccess();
       }
     }).catchError((error) {
       print(error);

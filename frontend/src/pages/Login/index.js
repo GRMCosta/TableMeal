@@ -17,7 +17,7 @@ export default function Login({ history }) {
       }
     });
     if (!response.data) {
-      console.log("Login ou Senha incorreto!");
+      alert("Login ou Senha incorreto!");
     }
     else {
       const { _id } = response.data;
@@ -26,6 +26,9 @@ export default function Login({ history }) {
       console.log("Logou!!");
       history.push('/food');
     }
+  }
+  function menu(){
+    history.push('/');
   }
   function register(){
     history.push('/register');
@@ -38,7 +41,7 @@ export default function Login({ history }) {
   return (
 
     <>
-      <NavBar register={() => register()} login={() => login()} />
+      <NavBar menu={() => menu()} register={() => register()} login={() => login()} />
       <div className="container">
         <img src={logo} alt="TableMeal" />
 

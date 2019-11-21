@@ -25,6 +25,9 @@ export default function Login({ history }) {
     history.push('/food');
   }
 
+  function menu() {
+    history.push('/');
+}
   function register(){
     history.push('/register');
   }
@@ -34,7 +37,7 @@ export default function Login({ history }) {
   return (
 
     <>
-    <NavBar register={() => register()} login={() => login()} />
+    <NavBar menu={() => menu()} register={() => register()} login={() => login()} />
       <div className="container">
         <img src={logo} alt="TableMeal" />
 

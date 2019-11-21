@@ -37,6 +37,9 @@ export default function New({ history }) {
         history.push('/Food');
     }
 
+    function menu() {
+        history.push('/');
+    }
     function sair() {
         history.push('/login');
     }
@@ -52,7 +55,7 @@ export default function New({ history }) {
 
     return (
         <>
-            <NavBar sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
+            <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
             <div className="container">
                 <img src={logo} alt="TableMeal" />
 

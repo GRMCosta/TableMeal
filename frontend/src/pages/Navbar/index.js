@@ -24,7 +24,7 @@ export default function Navbar(props) {
     return (
         <>
             <nav>
-                <h1>TableMeal</h1>
+                <h1 onClick={() =>  {props.menu()}}>TableMeal</h1>
                 <div className="container-navbar">
                     {showUser()}
                 </div>

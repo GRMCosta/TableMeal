@@ -15,6 +15,7 @@ nav h1{
     letter-spacing: 2px;   
     font-family: 'Arial';
     padding-top: 10px;
+    cursor: pointer;
 }
 
 .container-navbar{

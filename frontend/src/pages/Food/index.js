@@ -19,7 +19,9 @@ export default function Food({ history }) {
         loadFoods();
 
     }, []);
-
+    function menu() {
+        history.push('/');
+    }
     function sair() {
         history.push('/login');
     }
@@ -52,7 +54,7 @@ export default function Food({ history }) {
     return (
         <>
 
-            <NavBar sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
+            <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
             <div className="container">
                 <img className="addFoddImage" src={logo} alt="TableMeal" onClick={newFood} />
 

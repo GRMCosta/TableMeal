@@ -1,6 +1,8 @@
+import 'package:mobile/JModels/register_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:mobile/JServices/register_services.dart';
 
 class UserModel extends Model {
   Map<String, dynamic> userData = Map();
@@ -9,34 +11,31 @@ class UserModel extends Model {
   bool isLoggedIn = false;
 
   void signUp(
-      {@required Map<String, dynamic> userData,
+      {@required String name,
+      @required String email,
       @required String pass,
+      @required int cpf,
       @required VoidCallback onSuccess,
       @required VoidCallback onFail}) async {
+
     isLoading = true;
     notifyListeners();
 
-    await Future.delayed(Duration(seconds: 3));
+    Post post = Post(name: name, email: email, password: pass, cpf: cpf);
 
-    isLoading = false;
-    notifyListeners();
-    /*createUserWithEmailAndPassword(
-      email: userData["email"]
-      password: pass
-    ).then(user){
-    onSuccess();
-    isLoading = false;
-    isLoggedIn = true;
-    notifyListeners();
-    }).catchError(e){
-    onFail();
-    isLoading = false;
-    isLoggedIn = false;
-    notifyListeners();
-
-
-    é assim com o firebase verificar como vai ficar usando a api do mongo
-     */
+    createPost(post).then((response) {
+      if (response.statusCode > 200) {
+        print(response);
+        onSuccess();
+        isLoading = false;
+        notifyListeners();
+      }
+    }).catchError((error) {
+      print(error);
+      onFail();
+      isLoading = false;
+      notifyListeners();
+    });
   }
 
   Future signIn(

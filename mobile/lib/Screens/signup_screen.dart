@@ -103,14 +103,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: Colors.red,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        Map<String, dynamic> userData = {
-                          "name": _nameController.text,
-                          "email": _emailController,
-                          "cpf": _cpfController,
-                        };
-
                         model.signUp(
-                            userData: userData,
+                            name: _nameController.text,
+                            email: _emailController.text,
+                            cpf: int.parse(_cpfController.text),
                             pass: _passController.text,
                             onSuccess: _onSuccess,
                             onFail: _onFail);
@@ -128,9 +124,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Usuário criado com sucesso"),
       backgroundColor: Theme.of(context).primaryColor,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 5),
     ));
-    Future.delayed(Duration(seconds: 2)).then((_) {
+    Future.delayed(Duration(seconds: 10)).then((_) {
       Navigator.of(context).pop();
     });
   }

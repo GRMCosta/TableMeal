@@ -10,7 +10,7 @@
         30% {
             transform: translatex(0px) scale(2);
         }
-        40% {
+        30% {
             transform: translatex(0px) scale(1);
         }
     }

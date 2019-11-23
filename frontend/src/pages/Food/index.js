@@ -31,7 +31,7 @@ export default function Food({ history }) {
     function pedidos() {
         history.push('/orders');
     }
-    
+
 
     function newFood() {
         history.push('/new');
@@ -46,7 +46,7 @@ export default function Food({ history }) {
             params: {
                 name: name
             }
-          });
+        });
         console.log(response);
     }
 
@@ -54,26 +54,61 @@ export default function Food({ history }) {
     return (
         <>
 
-            <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()}/>
-            <div className="container">
-                <img className="addFoddImage" src={logo} alt="TableMeal" onClick={newFood} />
+            <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()} />
+            <div className="masterContainer">
+                <img src={logo} alt="TableMeal" onClick={newFood} />
+                <div className="container2">
+                    <div className="content">
 
-                <div className="content">
+
+                        <ul className="food-list">
+                            {foods.map((food) => (
+                                <li key={food._id}>
+                                    <div class="show-image">
+                                        <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
+                                        <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
+                                    </div>
+                                    <strong>{food.name}</strong>
+                                    <span>{food.price ? `R$ ${food.price}` : `GRATUITO`}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="content">
 
 
-                    <ul className="food-list">
-                        {foods.map((food) => (
-                            <li key={food._id}>
-                                <div class="show-image">
-                                    <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
-                                    <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
-                                </div>
-                                <strong>{food.name}</strong>
-                                <span>{food.price ? `R$ ${food.price}` : `GRATUITO`}</span>
-                            </li>
-                        ))}
-                    </ul>
+                        <ul className="food-list">
+                            {foods.map((food) => (
+                                <li key={food._id}>
+                                    <div class="show-image">
+                                        <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
+                                        <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
+                                    </div>
+                                    <strong>{food.name}</strong>
+                                    <span>{food.price ? `R$ ${food.price}` : `GRATUITO`}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="content">
+
+
+                        <ul className="food-list">
+                            {foods.map((food) => (
+                                <li key={food._id}>
+                                    <div class="show-image">
+                                        <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
+                                        <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
+                                    </div>
+                                    <strong>{food.name}</strong>
+                                    <span>{food.price ? `R$ ${food.price}` : `GRATUITO`}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
+
+
             </div>
         </>
     )

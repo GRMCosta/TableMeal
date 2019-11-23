@@ -59,7 +59,7 @@ export default function New({ history }) {
             <div className="container">
                 <img src={logo} alt="TableMeal" />
 
-                <div className="content">
+                <div className="content animated fadeInUp ease-out-circ d2 a-1 f2 fw3">
                     <form onSubmit={handleSubmit}>
                         <label id="thumbnail" style={{ backgroundImage: `url(${preview})` }}
                             className={thumbnail ? 'has-thumbnail' : ''}
@@ -101,8 +101,8 @@ export default function New({ history }) {
                             <option value="Refrigerante">Refrigerante</option>
                         </select>
                         <div className="sideByside">
-                        <button onClick={back} className="back">Voltar</button>
-                        <button type="submit" className="btn">Cadastrar Prato</button>
+                        <button onClick={back} className="back hvr-glow">Voltar</button>
+                        <button type="submit" className="btn hvr-glow">Cadastrar Prato</button>
                         </div>
                         
                     </form>

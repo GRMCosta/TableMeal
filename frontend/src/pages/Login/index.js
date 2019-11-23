@@ -45,7 +45,7 @@ export default function Login({ history }) {
       <div className="container">
         <img src={logo} alt="TableMeal" />
 
-        <div className="content">
+        <div className="content animated fadeInUp ease-out-circ d2 a-1 f2 fw3">
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">NOME *</label>
             <input type="name" id="name" placeholder="Nome" value={name} onChange={event => setName(event.target.value)} />
@@ -53,7 +53,7 @@ export default function Login({ history }) {
             <label htmlFor="password">SENHA *</label>
             <input type="password" id="password" placeholder="Senha" value={password} onChange={event => setPassword(event.target.value)} />
 
-            <button className="btn" type="submit">Login</button>
+            <button className="btn hvr-glow" type="submit">Login</button>
           </form>
         </div>
       </div>

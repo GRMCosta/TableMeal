@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
+
 nav{
     position: fixed;
     background-color: rgb(97, 0, 0);
@@ -11,9 +13,9 @@ nav{
 nav h1{
     color: white;
     padding-left: 15px;
-    font-size: 36px;
+    font-size: 40px;
     letter-spacing: 2px;   
-    font-family: Courier;
+    font-family: 'Gochi Hand', cursive;
     padding-top: 10px;
     cursor: pointer;
 }
@@ -63,9 +65,9 @@ nav h1{
 .container-navbar span{
     color: white;
     padding-left: 15px;
-    font-size: 20px;
+    font-size: 28px;
     letter-spacing: 2px;   
-    font-family: 'Raleway','Arial';
+    font-family: 'Gochi Hand', cursive;
     padding-top: 20px;
     padding-right: 20px;
     cursor: pointer;

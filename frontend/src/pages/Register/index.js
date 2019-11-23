@@ -38,10 +38,10 @@ export default function Login({ history }) {
 
     <>
     <NavBar menu={() => menu()} register={() => register()} login={() => login()} />
-      <div className="container">
+      <div className="container ">
         <img src={logo} alt="TableMeal" />
 
-        <div className="content">
+        <div className="content animated fadeInUp ease-out-circ d-1 a-2">
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">NOME *</label>
             <input type="name" id="name" placeholder="Nome" value={name} onChange={event => setName(event.target.value)} />
@@ -55,7 +55,7 @@ export default function Login({ history }) {
             <label htmlFor="cnpj">CNPJ *</label>
             <input type="cnpj" id="cnpj" placeholder="CNPJ" value={cnpj} onChange={event => setCnpj(event.target.value)} />
 
-            <button className="btn" type="submit">Cadastrar</button>
+            <button className="btn hvr-glow" type="submit">Cadastrar</button>
           </form>
         </div>
       </div>

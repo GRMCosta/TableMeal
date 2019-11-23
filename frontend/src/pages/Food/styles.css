@@ -45,11 +45,5 @@ div.show-image img.delete {
     cursor: pointer;
 }
 
-.container img.addFoddImage{
-    width: 40%;
-    height: auto;
-    cursor: pointer;
-    color: brown;
-}
   
 

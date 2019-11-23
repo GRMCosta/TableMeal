@@ -1,24 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+
 @media screen and (min-width:1000px) {
     
     @keyframes image-slide {
         0% {
             transform: translatex(0px) scale(0);
         }
-        20% {
-            transform: translatex(0px) scale(2);
-        }
-        30% {
-            transform: translatex(0px) scale(2);
-        }
-        30% {
+        40% {
             transform: translatex(0px) scale(1);
         }
     }
 }
 
 .cont{
-    margin: 80px auto 0;
-  max-width: 450px;
+    margin: -0px auto 0;
+  max-width: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,17 +24,50 @@
 }
 
 .cont img {
-    width: 80%;
+    width: 60%;
     height: auto;
-  }
+}
 
 .image-container {
         -webkit-animation: image-slide 4s cubic-bezier(.5,.5,0,1);
         animation: image-slide 4s cubic-bezier(.5,.5,0,1);
-        margin-top: 20%;
-        
-    }
+        margin-top: 15%; 
+}
+
+h1{
+    color: white;
+    padding-left: 15px;
+    letter-spacing: 2px;   
+    font-family: 'Gochi Hand', cursive;
+    padding-top: 10px;
+}
+
+h2{
+    color: white;
+    font-family: 'Gochi Hand', cursive;
+    padding-top: 10px;
+}
 
 
 
+.box{
+  width: 100%;
+  background: rgba(255, 255, 255, 0.664);
+  margin-top: 100px;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.box h2{
+    color: black;
+    align-self: center;
+    font-family: 'Gochi Hand', cursive;
+    padding-top: 10px;
+  }
+
+.box img {
+    width: 60%;
+}

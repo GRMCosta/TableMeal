@@ -21,7 +21,7 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-    Post post = Post(name: name, email: email, password: pass, cpf: cpf);
+    Register post = Register(name: name, email: email, password: pass, cpf: cpf);
 
     createPost(post).then((response) {
       if (response.statusCode > 200) {
@@ -45,11 +45,7 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-    await Future.delayed(Duration(seconds: 3));
-
-    isLoading = false;
-    isLoggedIn = true;
-    notifyListeners();
+    Register post = Register(email: email, password: pass);
 
     /*loginInWithEmailAndPassword(
       email: email

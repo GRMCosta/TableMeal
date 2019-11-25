@@ -45,5 +45,14 @@ div.show-image img.delete {
     cursor: pointer;
 }
 
+h1{
+    color: black;
+    padding-left: 15px;
+    letter-spacing: 2px;   
+    font-family: 'Gochi Hand', cursive;
+    padding-top: 10px;
+    align-self: center;
+}
+
   
 

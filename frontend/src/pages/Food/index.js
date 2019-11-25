@@ -59,10 +59,12 @@ export default function Food({ history }) {
                 <img src={logo} alt="TableMeal" onClick={newFood} />
                 <div className="container2">
                     <div className="content">
-
+                        <h1>
+                            Sobremesas
+                    </h1>
 
                         <ul className="food-list">
-                            {foods.map((food) => (
+                            {foods.filter(food => food.type == "Sobremesa").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
@@ -75,10 +77,11 @@ export default function Food({ history }) {
                         </ul>
                     </div>
                     <div className="content">
-
-
+                        <h1>
+                            Pratos
+                    </h1>
                         <ul className="food-list">
-                            {foods.map((food) => (
+                            {foods.filter(food => food.type == "Prato").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
@@ -91,10 +94,12 @@ export default function Food({ history }) {
                         </ul>
                     </div>
                     <div className="content">
-
+                        <h1>
+                            Refrigerantes
+                    </h1>
 
                         <ul className="food-list">
-                            {foods.map((food) => (
+                            {foods.filter(food => food.type == "Refrigerante").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />

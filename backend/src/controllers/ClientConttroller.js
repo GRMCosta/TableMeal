@@ -3,8 +3,8 @@ const Client = require('../models/Client');
 module.exports = {
 
     async index(req,res){
-        const { name } = req.query;
-        const client = await Client.find({ name });
+        const { cpf,  password } = req.query;
+        const client = await Client.find({ cpf , password });
         return res.json(client);
     },
 

@@ -1,23 +1,23 @@
 import 'dart:convert';
 
-Post postFromJson(String str) => Post.fromJson(json.decode(str));
+SignUp postFromJson(String str) => SignUp.fromJson(json.decode(str));
 
-String postToJson(Post data) => json.encode(data.toJson());
+String postToJson(SignUp data) => json.encode(data.toJson());
 
-class Post {
+class SignUp {
   String name;
   String email;
   String password;
   int cpf;
 
-  Post({
+  SignUp({
     this.name,
     this.email,
     this.password,
     this.cpf,
   });
 
-  factory Post.fromJson(Map<String, dynamic> json) => Post(
+  factory SignUp.fromJson(Map<String, dynamic> json) => SignUp(
     name: json["name"],
     email: json["email"],
     password: json["password"],

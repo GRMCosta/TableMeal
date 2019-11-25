@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 
 
-String _url = 'http://172.16.227.142:9999/clients';
+String _url = 'http://192.168.0.4:9999/clients';
 
-Future<Post> getPost(String nome) async{
+Future<SignUp> getClient(String nome) async{
   final response = await http.post('$_url?name=$nome');
   return postFromJson(response.body);
 }
 
-Future<http.Response> createPost(Post post) async{
+Future<http.Response> createClient(SignUp post) async{
   final response = await http.post('$_url',
       headers: {
         HttpHeaders.contentTypeHeader: 'application/json',

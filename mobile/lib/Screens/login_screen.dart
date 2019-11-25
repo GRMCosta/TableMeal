@@ -54,11 +54,11 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(hintText: "E-mail"),
-                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(hintText: "CPF"),
+                keyboardType: TextInputType.number,
                 validator: (text) {
-                  if (text.isEmpty || text.contains("@"))
-                    return "E-mail inválido";
+                  if (text.isEmpty || text.length<11)
+                    return "CPF inválido";
                   return null;
                 },
               ),

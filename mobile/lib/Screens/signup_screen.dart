@@ -35,7 +35,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             return Center(
               child: CircularProgressIndicator(),
             );
-
           return Form(
             key: _formKey,
             child: ListView(

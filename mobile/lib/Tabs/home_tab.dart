@@ -14,7 +14,7 @@ class _HomeTabState extends State<HomeTab> {
           gradient: LinearGradient(
             colors: [
               Colors.red,
-              Colors.pink,
+              Color.fromARGB(255, 97, 0, 0),
             ],
             begin: Alignment.center,
             end: Alignment.bottomCenter,

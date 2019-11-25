@@ -21,9 +21,9 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-    Post post = Post(name: name, email: email, password: pass, cpf: cpf);
+    SignUp post = SignUp(name: name, email: email, password: pass, cpf: cpf);
 
-    createPost(post).then((response) {
+    createClient(post).then((response) {
       if (response.statusCode > 200) {
         isLoading = false;
         notifyListeners();

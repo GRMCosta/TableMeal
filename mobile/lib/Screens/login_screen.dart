@@ -10,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   static final _passController = TextEditingController();
-  static final _emailController = TextEditingController();
+  static final _cpfController = TextEditingController();
 
   static final _formKey = GlobalKey<FormState>();
   static final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: EdgeInsets.all(10.0),
             children: <Widget>[
               TextFormField(
-                controller: _emailController,
+                controller: _cpfController,
                 decoration: InputDecoration(hintText: "CPF"),
                 keyboardType: TextInputType.number,
                 validator: (text) {
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     if (_formKey.currentState.validate()) {}
                     model.signIn(
-                        email: _emailController.text,
+                        cpf: int.parse(_cpfController.text),
                         pass: _passController.text,
                         onSuccess: _onSuccess,
                         onFail: _onFail);
@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _onFail() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text("Falha ao Entrar"),
+      content: Text("CPF ou senha inválido"),
       backgroundColor: Theme.of(context).primaryColor,
       duration: Duration(seconds: 2),
     ));

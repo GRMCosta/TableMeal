@@ -122,10 +122,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void _onSuccess() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Usuário criado com sucesso"),
-      backgroundColor: Theme.of(context).primaryColor,
-      duration: Duration(seconds: 3),
+      backgroundColor: Colors.green,
+      duration: Duration(seconds: 5),
     ));
-    Future.delayed(Duration(seconds: 3)).then((_) {
+    Future.delayed(Duration(seconds: 1)).then((_) {
       Navigator.of(context).pop();
     });
   }
@@ -133,10 +133,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void _onFail() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Falha ao criar usuário"),
-      backgroundColor: Theme.of(context).primaryColor,
-      duration: Duration(seconds: 10),
+      backgroundColor: Colors.red,
+      duration: Duration(seconds: 5),
     ));
-    Future.delayed(Duration(seconds: 2)).then((_) {
+    Future.delayed(Duration(seconds: 1)).then((_) {
       Navigator.of(context).pop();
     });
   }

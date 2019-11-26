@@ -1,7 +1,25 @@
 .content2{
     width: 100%;
     background: rgba(255, 255, 255, 0.664);
-    margin-top: 50px;
+    margin: 200px auto 0;
     border-radius: 20px;
-    padding: 500px;
+    padding: 100px;
+  }
+
+table, td, th {  
+    border: 1px solid black;
+    text-align: left;
+    background: rgb(97, 0, 0);
+    font-size: 20px;
+    font-family: 'Gochi Hand', cursive;
+    color: white;
+  }
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+th, td {
+    padding: 15px;
   }

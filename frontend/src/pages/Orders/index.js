@@ -34,40 +34,23 @@ export default function Order({ history }) {
     return (
         <>
             <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()} />
-            <div className="container">
                 <div className="content2">
                     <table>
-                        <thead>
+                        <tr>
+                            <th>Prato</th>
+                            <th>Mesa</th>
+                            <th>Status</th>
+                        </tr>
+                        {orders.map((order) => (
                             <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
+                                <td>{order.foods.map((food) =>(food.name + ","))}</td>
+                                <td>{order.table}</td>
+                                <td>Aguardando...</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td colSpan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
+                        ))}
                     </table>
 
                 </div>
-            </div>
         </>
     )
 

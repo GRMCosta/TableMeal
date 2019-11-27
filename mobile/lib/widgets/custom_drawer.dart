@@ -54,9 +54,9 @@ class CustomDrawer extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Olá, ${!model.isLoggedIn ? "" : model.userData["name"]}",
+                                "Olá, ${!model.isLoggedIn ? "Visitante" : model.userData["name"]}",
                                 style: TextStyle(
-                                    fontSize: 20.0,
+                                    fontSize: 25.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               GestureDetector(
@@ -66,7 +66,7 @@ class CustomDrawer extends StatelessWidget {
                                       : "Sair",
                                   style: TextStyle(
                                       color: Colors.indigo,
-                                      fontSize: 16.0,
+                                      fontSize: 30.0,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 onTap: () {

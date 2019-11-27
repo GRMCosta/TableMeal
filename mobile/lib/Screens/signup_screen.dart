@@ -19,7 +19,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: _scaffoldKey,
         appBar: AppBar(
           title: Text(
             "Criar Conta",
@@ -32,8 +31,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         body:
             ScopedModelDescendant<UserModel>(builder: (context, child, model) {
           if (model.isLoading)
-            return Center(
-              child: CircularProgressIndicator(),
+            return Scaffold(
+                key: _scaffoldKey,
+                body: Center(
+                  child: CircularProgressIndicator(),
+                )
             );
           return Form(
             key: _formKey,
@@ -109,6 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             pass: _passController.text,
                             onSuccess: _onSuccess,
                             onFail: _onFail);
+                        print(model.isLoading);
                       }
                     },
                   ),
@@ -120,12 +123,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void _onSuccess() {
+    print("vai");
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Usuário criado com sucesso"),
       backgroundColor: Colors.green,
       duration: Duration(seconds: 5),
     ));
-    Future.delayed(Duration(seconds: 1)).then((_) {
+    print("foi");
+    Future.delayed(Duration(seconds: 5)).then((_) {
       Navigator.of(context).pop();
     });
   }
@@ -136,8 +141,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.red,
       duration: Duration(seconds: 5),
     ));
-    Future.delayed(Duration(seconds: 1)).then((_) {
-      Navigator.of(context).pop();
-    });
   }
 }

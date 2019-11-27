@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:mobile/JModels/signup_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'dart:async';
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:mobile/JServices/client_services.dart';
 
 class UserModel extends Model {
-
   Map<String, dynamic> userData = Map();
 
   bool isLoading = false;
@@ -18,19 +18,17 @@ class UserModel extends Model {
       @required int cpf,
       @required VoidCallback onSuccess,
       @required VoidCallback onFail}) async {
-
     isLoading = true;
     notifyListeners();
 
     SignUp post = SignUp(name: name, email: email, password: pass, cpf: cpf);
 
-    createClient(post).then((response) {
-      print(response);
-      if (response.statusCode > 200) {
-        onSuccess();
-        isLoading = false;
-        notifyListeners();
-      }
+    await createClient(post).then((response) {
+      userData = jsonDecode(response.body);
+      isLoggedIn = true;
+      onSuccess();
+      isLoading = false;
+      notifyListeners();
     }).catchError((error) {
       print(error);
       onFail();
@@ -44,32 +42,30 @@ class UserModel extends Model {
       @required String pass,
       @required VoidCallback onSuccess,
       @required VoidCallback onFail}) async {
-
     isLoading = true;
     notifyListeners();
 
-    getClient(cpf, pass).then((response) {
-      print(response);
-      if (response.statusCode > 200) {
-        onSuccess();
-        isLoading = false;
-        notifyListeners();
-      }
+    await getClient(cpf, pass).then((response) {
+      print("vai");
+      print(response.body);
+      print(response.statusCode);
+      userData = Map<String, dynamic>.from(jsonDecode(response.body));
+      print("foi?");
+      isLoggedIn = true;
+      onSuccess();
+      isLoading = false;
+      notifyListeners();
     }).catchError((error) {
       print(error);
       onFail();
       isLoading = false;
       notifyListeners();
     });
-
-
   }
 
   void signOut() async {
-    //await sign.out;
     userData = Map();
     isLoggedIn = false;
-    //user = null;
     notifyListeners();
   }
 
@@ -84,8 +80,7 @@ class UserModel extends Model {
   Document.snapshot docUser =
   await Firestore.blablabla
 
-
   colocar ela no signIn e quando o app abre(dando override no addListener
   notifylistaners():
-   */
+*/
 }

@@ -23,21 +23,25 @@ class UserModel extends Model {
 
     SignUp post = SignUp(name: name, email: email, password: pass, cpf: cpf);
 
-    await createClient(post).then((response) {
-      userData = jsonDecode(response.body);
-      isLoggedIn = true;
-      onSuccess();
-      isLoading = false;
-      notifyListeners();
-    }).catchError((error) {
-      print(error);
-      onFail();
-      isLoading = false;
-      notifyListeners();
+    createClient(post).then((response) {
+      print(response.body);
+      print(response.statusCode);
+      if (!response.body.contains("error")) {
+        userData = jsonDecode(response.body);
+        isLoggedIn = true;
+        onSuccess();
+        isLoading = false;
+        notifyListeners();
+      } else {
+        print(response.body);
+        onFail();
+        isLoading = false;
+        notifyListeners();
+      }
     });
   }
 
-  Future signIn(
+  void signIn(
       {@required int cpf,
       @required String pass,
       @required VoidCallback onSuccess,
@@ -45,21 +49,20 @@ class UserModel extends Model {
     isLoading = true;
     notifyListeners();
 
-    await getClient(cpf, pass).then((response) {
-      print("vai");
+    getClient(cpf, pass).then((response) {
       print(response.body);
-      print(response.statusCode);
-      userData = Map<String, dynamic>.from(jsonDecode(response.body));
-      print("foi?");
-      isLoggedIn = true;
-      onSuccess();
-      isLoading = false;
-      notifyListeners();
-    }).catchError((error) {
-      print(error);
-      onFail();
-      isLoading = false;
-      notifyListeners();
+      if (response.body.contains("INVÁLIDO")){
+        print(response.body);
+        onFail();
+        isLoading = false;
+        notifyListeners();
+      } else {
+        userData = jsonDecode(response.body);
+        isLoggedIn = true;
+        onSuccess();
+        isLoading = false;
+        notifyListeners();
+      }
     });
   }
 

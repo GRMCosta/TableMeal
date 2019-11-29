@@ -4,8 +4,14 @@ module.exports = {
 
     async index(req,res){
         const { cpf,  password } = req.query;
-        const client = await Client.find({ cpf , password });
-        return res.json(client);
+        const client = await Client.findOne({ cpf , password });
+
+        if(!client){
+            return res.status(400).json({ error: 'CPF OU SENHA INVÁLIDO'});
+        }
+        else {
+            return res.json(client);
+        }
     },
 
 

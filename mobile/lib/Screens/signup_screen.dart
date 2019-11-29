@@ -19,6 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
         appBar: AppBar(
           title: Text(
             "Criar Conta",
@@ -32,11 +33,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ScopedModelDescendant<UserModel>(builder: (context, child, model) {
           if (model.isLoading)
             return Scaffold(
-                key: _scaffoldKey,
                 body: Center(
                   child: CircularProgressIndicator(),
-                )
-            );
+                ));
           return Form(
             key: _formKey,
             child: ListView(
@@ -123,21 +122,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void _onSuccess() {
-    print("vai");
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Usuário criado com sucesso"),
       backgroundColor: Colors.green,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 2),
     ));
-    print("foi");
-    Future.delayed(Duration(seconds: 5)).then((_) {
+    Future.delayed(Duration(seconds: 2)).then((_) {
       Navigator.of(context).pop();
     });
   }
 
   void _onFail() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text("Falha ao criar usuário"),
+      content: Text("Usuário já existe"),
       backgroundColor: Colors.red,
       duration: Duration(seconds: 5),
     ));

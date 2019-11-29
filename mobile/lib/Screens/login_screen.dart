@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
           "Entrar",
@@ -43,7 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
       body: ScopedModelDescendant<UserModel>(builder: (context, child, model) {
         if (model.isLoading)
           return Scaffold(
-              key: _scaffoldKey,
               body: Center(
                 child: CircularProgressIndicator(),
               ));
@@ -114,15 +114,21 @@ class _LoginScreenState extends State<LoginScreen> {
       }),
     );
   }
-
   void _onSuccess() {
-    print("foi");
-    Navigator.of(context).pop();
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Sucesso"),
+      backgroundColor: Colors.green,
+      duration: Duration(seconds: 2),
+    ));
+    Future.delayed((Duration(seconds: 2))).then((_) {
+      Navigator.of(context).pop();
+    });
   }
+
   void _onFail() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("CPF ou senha inválido"),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.red,
       duration: Duration(seconds: 5),
     ));
   }

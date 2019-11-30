@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/Tabs/home_tab.dart';
 import 'package:mobile/widgets/custom_drawer.dart';
+import 'package:mobile/Tabs/places_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -23,9 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
         Scaffold(
           appBar: AppBar(
-            title: Text("Cardápio"),
+            title: Text("Lojas"),
             centerTitle: true,
           ),
+          body: PlacesTab(),
           drawer: CustomDrawer(_pageController),
         ),
       ],

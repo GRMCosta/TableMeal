@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:mobile/JModels/signup_model.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mobile/JServices/client_services.dart';
 
@@ -74,16 +73,4 @@ class UserModel extends Model {
 
   void recoverPass() {}
 
-/*
-  criar função para verificar o usuario que está logado e enviar os dados dele
-  Future<Null> _loadCurrentUser() async{
-  if(firebaseUser == nul)
-  firebaseUser = await.firebase.currentUser();
-  if(firebaseUser != null){
-  Document.snapshot docUser =
-  await Firestore.blablabla
-
-  colocar ela no signIn e quando o app abre(dando override no addListener
-  notifylistaners():
-*/
 }

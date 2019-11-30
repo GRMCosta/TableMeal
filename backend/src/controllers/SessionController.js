@@ -4,11 +4,11 @@ const User = require('../models/User');
 module.exports = {
 
 
+    //PEGA TODOS OS RESTAURANTES
     async index(req,res){
         allRestaurents = await User.find();
         return res.json(allRestaurents);
     },
-    
     //PEGA UM RESTAURANTE
     async show(req,res){
         const { name, password } = req.query;

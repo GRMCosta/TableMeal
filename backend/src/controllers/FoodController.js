@@ -42,7 +42,7 @@ module.exports = {
     //DELETA FOOD
     async delete(req,res){
         const { name } = req.query;
-        const allFoods = await Food.deleteMany({name : name});
+        await Food.deleteMany({name : name});
         return res.json({Mensagem: 'Deletou a comida!'});
     },
 };

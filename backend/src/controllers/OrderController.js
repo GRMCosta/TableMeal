@@ -6,7 +6,7 @@ module.exports = {
 
     //PEGAR TODOS OS PEDIDOS
     async index(req,res){
-        const { user_id } = req.headers;
+        const { user_id } = req.query;
         const allOrders = await Order.find({foods: {$elemMatch: {user: mongooese.Types.ObjectId(user_id)}}});
         return res.json(allOrders);
     },
@@ -22,11 +22,18 @@ module.exports = {
             allFoods = foods.map(id => objects[id]);
             order = Order.create({
                 table,
-                foods: allFoods
+                foods: allFoods,
+                status: "Aguardando"
             })
             console.log(order)
             
         });
         return res.json(order);
     }
+
+    //ATUALIZAR STATUS PEDIDO
+    // async update(req, res){
+    //     const { id , status } = req.query;
+    //     await Order.findByIdAndUpdate(id, {$set : status })
+    // }
 }

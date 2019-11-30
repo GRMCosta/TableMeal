@@ -10,7 +10,7 @@ export default function Login({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await api.get('/sessions', {
+    const response = await api.get(`/sessions/${name}`, {
       params: {
         name: name,
         password: password

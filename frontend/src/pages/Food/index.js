@@ -64,7 +64,7 @@ export default function Food({ history }) {
                     </h1>
 
                         <ul className="food-list">
-                            {foods.filter(food => food.type == "Sobremesa").map((food) => (
+                            {foods.filter(food => food.type === "Sobremesa").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
@@ -81,7 +81,7 @@ export default function Food({ history }) {
                             Pratos
                     </h1>
                         <ul className="food-list">
-                            {foods.filter(food => food.type == "Prato").map((food) => (
+                            {foods.filter(food => food.type === "Prato").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
@@ -99,7 +99,7 @@ export default function Food({ history }) {
                     </h1>
 
                         <ul className="food-list">
-                            {foods.filter(food => food.type == "Refrigerante").map((food) => (
+                            {foods.filter(food => food.type === "Refrigerante").map((food) => (
                                 <li key={food._id}>
                                     <div class="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />

@@ -3,8 +3,14 @@ const User = require('../models/User');
 
 module.exports = {
 
-    //PEGA UM RESTAURANTE
+
     async index(req,res){
+        allRestaurents = await User.find();
+        return res.json(allRestaurents);
+    },
+    
+    //PEGA UM RESTAURANTE
+    async show(req,res){
         const { name, password } = req.query;
         const restaurant = await User.findOne({name, password
         });

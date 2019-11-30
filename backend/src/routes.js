@@ -10,6 +10,7 @@ const routes = express.Router();
 const upload = multer(uploadConfig);
 
 routes.get('/sessions', SessionController.index);
+routes.get('/sessions/:name', SessionController.show);
 routes.post('/sessions', SessionController.store);
 
 

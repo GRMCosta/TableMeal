@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 
 Food postFromJson(String str) => Food.fromJson(json.decode(str));

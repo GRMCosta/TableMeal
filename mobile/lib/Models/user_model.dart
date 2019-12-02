@@ -6,7 +6,6 @@ import 'package:mobile/JServices/client_services.dart';
 
 class UserModel extends Model {
   Map<String, dynamic> userData = Map();
-
   bool isLoading = false;
   bool isLoggedIn = false;
 
@@ -50,7 +49,7 @@ class UserModel extends Model {
 
     getClient(cpf, pass).then((response) {
       print(response.body);
-      if (response.body.contains("INVÁLIDO")){
+      if (response.body.contains("INVÁLIDO")) {
         print(response.body);
         onFail();
         isLoading = false;
@@ -72,5 +71,4 @@ class UserModel extends Model {
   }
 
   void recoverPass() {}
-
 }

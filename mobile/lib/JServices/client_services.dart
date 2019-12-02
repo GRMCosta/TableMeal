@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:mobile/JModels/signup_model.dart';
+import 'package:mobile/JDatas/signup_datas.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 

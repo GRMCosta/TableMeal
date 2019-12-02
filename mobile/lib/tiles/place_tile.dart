@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/JDatas/restaurants_datas.dart';
+import 'package:mobile/Screens/menu_screen.dart';
 
 class PlaceTile extends StatelessWidget {
-
-  final List<dynamic> response;
+  final RestaurantsList response;
 
   PlaceTile(this.response);
 
@@ -19,10 +20,26 @@ class PlaceTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "ADSODN"
+                  "Nome do restaurante",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              FlatButton(
+                child: Text("Ver cardápio"),
+                textColor: Colors.blue,
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => MenuScreen()));
+                },
+              )
+            ],
           )
         ],
       ),

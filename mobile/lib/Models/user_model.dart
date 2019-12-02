@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:mobile/JModels/signup_model.dart';
+import 'package:mobile/JDatas/signup_datas.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/JServices/client_services.dart';

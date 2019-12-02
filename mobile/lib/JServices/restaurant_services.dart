@@ -24,6 +24,6 @@ Future<http.Response> createOrder(FoodsList foodsList, int table,) async {
         HttpHeaders.contentTypeHeader: 'application/json',
         HttpHeaders.authorizationHeader: ''
       },
-      body: foodsListToJson(foodsList)+"table:");
+      body: foodsListToJson(foodsList)+"table: $table");
   return response;
 }

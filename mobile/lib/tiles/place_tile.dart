@@ -4,8 +4,9 @@ import 'package:mobile/Screens/menu_screen.dart';
 
 class PlaceTile extends StatelessWidget {
   final RestaurantsList response;
+  final int index;
 
-  PlaceTile(this.response);
+  PlaceTile(this.response,this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class PlaceTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Nome do restaurante",
+                  response.restaurants[index].name,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
@@ -36,7 +37,7 @@ class PlaceTile extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MenuScreen()));
+                      MaterialPageRoute(builder: (context) => MenuScreen(response.restaurants[index].id)));
                 },
               )
             ],

@@ -21,7 +21,7 @@ class RestaurantsList{
 }
 
 class Restaurant {
-  String id;
+  int id;
   String name;
   String email;
   String password;

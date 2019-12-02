@@ -18,7 +18,7 @@ class PlacesTab extends StatelessWidget {
           return ListView.builder(
             itemCount: snapshot.data.restaurants.length,
             itemBuilder: (context, index) =>
-                PlaceTile(snapshot.data)
+                PlaceTile(snapshot.data, index)
           );
       },
     );

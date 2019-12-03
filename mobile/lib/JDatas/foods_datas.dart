@@ -25,9 +25,9 @@ class FoodsList {
 }
 
 class Food {
-  int id;
-  int user;
-  Image image;
+  String id;
+  String user;
+  String thumbnail;
   String name;
   int price;
   String description;
@@ -36,7 +36,7 @@ class Food {
   Food(
       {this.id,
       this.user,
-      this.image,
+      this.thumbnail,
       this.name,
       this.price,
       this.description,
@@ -45,7 +45,7 @@ class Food {
   factory Food.fromJson(Map<String, dynamic> json) => Food(
         id: json["_id"],
         user: json["user"],
-        image: json["image"],
+        thumbnail: json["thumbnail"],
         name: json["name"],
         price: json["price"],
         description: json["description"],
@@ -55,7 +55,7 @@ class Food {
   Map<String, dynamic> toJson() => {
         "_id": id,
         "user": user,
-        "image": image,
+        "thumbnail": thumbnail,
         "name": name,
         "price": price,
         "description": description,

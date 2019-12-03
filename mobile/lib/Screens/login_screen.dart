@@ -25,7 +25,6 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.red,
         actions: <Widget>[
           FlatButton(
             child: Text(
@@ -97,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   textColor: Colors.white,
-                  color: Colors.red,
+                  color: Color.fromARGB(255, 97, 0, 0),
                   onPressed: () {
                     if (_formKey.currentState.validate()) {}
                     model.signIn(

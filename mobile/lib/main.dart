@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
         title: "TableMeal",
         theme: ThemeData(
           primarySwatch: Colors.red,
-          primaryColor: Colors.white,
+          primaryColor: Color.fromARGB(255, 97, 0, 0),
         ),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),

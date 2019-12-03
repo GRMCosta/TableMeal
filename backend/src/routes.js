@@ -23,6 +23,7 @@ routes.delete('/food', FoodController.delete);
 
 routes.get('/order', OrderController.index);
 routes.post('/order', OrderController.store);
+
 routes.put('/order', OrderController.update);
 
 

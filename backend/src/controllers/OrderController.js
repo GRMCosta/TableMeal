@@ -29,11 +29,12 @@ module.exports = {
             
         });
         return res.json(order);
-    }
+    },
 
     //ATUALIZAR STATUS PEDIDO
-    // async update(req, res){
-    //     const { id , status } = req.query;
-    //     await Order.findByIdAndUpdate(id, {$set : status })
-    // }
+     async update(req, res){
+         const { id , status } = req.query;
+         console.log(req.query);
+         await Order.findByIdAndUpdate(id, {$set : status });
+     }
 }

@@ -11,7 +11,7 @@ export default function Order({ history }) {
         async function loadOrders() {
             const user_id = sessionStorage.getItem('user');
             const response = await api.get('/order', {
-                headers: { user_id }
+                params: { user_id }
             });
             console.log(response.data);
             setOrders(response.data);
@@ -19,18 +19,17 @@ export default function Order({ history }) {
         loadOrders();
     }, []);
 
-    // async function statusOrder(id) {
-    //     const newFoods = orders.filter((food) => {
-    //         return food.name !== name;
-    //     });
-    //     setOrders(newFoods);
-    //     const response = await api.delete('/food', {
-    //         params: {
-    //             name: name
-    //         }
-    //     });
-    //     console.log(response);
-    // }
+     async function statusOrder(id) {
+         const newOrders = orders.filter((order) => {
+             return order._id !== id;
+         });
+         setOrders(newOrders);
+         console.log(id)
+         const response = await api.pu('/order', {
+            params: { id }
+         });
+         console.log(response);
+     }
 
     function menu() {
         history.push('/');

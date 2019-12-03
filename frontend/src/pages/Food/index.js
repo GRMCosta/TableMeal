@@ -13,6 +13,7 @@ export default function Food({ history }) {
             const response = await api.get('/food', {
                 headers: { user_id }
             });
+            console.log(response)
             setFoods(response.data);
 
         }

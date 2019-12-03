@@ -10,6 +10,7 @@ const app = express();
 mongoose.connect('mongodb+srv://tableMeal:tableMeal@tablemeal-n6whx.mongodb.net/tableMeal?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 // req.query = acessar query params (para filtros)

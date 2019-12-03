@@ -24,10 +24,10 @@ export default function Order({ history }) {
              return order._id !== id;
          });
          setOrders(newOrders);
-         console.log(id)
-         const response = await api.pu('/order', {
-            params: { id }
-         });
+         const response = await api.put('/order', {
+             id,
+             status : "Enviado"
+        });
          console.log(response);
      }
 

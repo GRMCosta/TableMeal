@@ -1,4 +1,5 @@
 const mongooese = require('mongoose');
+var ip = require( 'ip' );
 
 const FoodSchema = new mongooese.Schema({
     thumbnail: String,
@@ -18,7 +19,7 @@ const FoodSchema = new mongooese.Schema({
 });
 
 FoodSchema.virtual('thumbnail_url').get(function(){
-    return `http://localhost:9999/files/${this.thumbnail}`
+    return `http://${ip.address()}:9999/files/${this.thumbnail}`
 })
 
 module.exports = mongooese.model('Food', FoodSchema);

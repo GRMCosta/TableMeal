@@ -5,12 +5,14 @@ SignUp postFromJson(String str) => SignUp.fromJson(json.decode(str));
 String postToJson(SignUp data) => json.encode(data.toJson());
 
 class SignUp {
+  int id;
   String name;
   String email;
   String password;
   int cpf;
 
   SignUp({
+    this.id,
     this.name,
     this.email,
     this.password,
@@ -18,6 +20,7 @@ class SignUp {
   });
 
   factory SignUp.fromJson(Map<String, dynamic> json) => SignUp(
+    id: json["_id"],
     name: json["name"],
     email: json["email"],
     password: json["password"],
@@ -25,6 +28,7 @@ class SignUp {
   );
 
   Map<String, dynamic> toJson() => {
+    "_id": id,
     "name": name,
     "email": email,
     "password": password,

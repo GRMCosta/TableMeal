@@ -5,19 +5,21 @@ class ProductTile extends StatelessWidget {
   final FoodsList response;
   final int index;
 
-  ProductTile(this.response,this.index);
+  ProductTile(this.response, this.index);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(
             height: 100.0,
-
-
+            child: Image.network(
+              response.foods[index].thumbnail_url,
+              fit: BoxFit.cover,
+            ),
           ),
           Container(
             padding: EdgeInsets.all(8.0),
@@ -30,7 +32,9 @@ class ProductTile extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
                 Text(
-                  response.foods[index].type+"  R\$:"+response.foods[index].price.toString(),
+                  response.foods[index].type +
+                      "  R\$:" +
+                      response.foods[index].price.toString(),
                   textAlign: TextAlign.start,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
                 ),
@@ -49,8 +53,7 @@ class ProductTile extends StatelessWidget {
                 child: Text("Adicionar ao carrinho"),
                 textColor: Colors.blue,
                 padding: EdgeInsets.zero,
-                onPressed: () {
-                },
+                onPressed: () {},
               )
             ],
           )

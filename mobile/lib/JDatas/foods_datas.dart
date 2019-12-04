@@ -25,9 +25,9 @@ class Food {
   String id;
   String user;
   String thumbnail;
-  String thumbnail_url;
+  String thumbnailUrl;
   String name;
-  int price;
+  double price;
   String description;
   String type;
 
@@ -35,7 +35,7 @@ class Food {
       {this.id,
       this.user,
       this.thumbnail,
-      this.thumbnail_url,
+      this.thumbnailUrl,
       this.name,
       this.price,
       this.description,
@@ -45,7 +45,7 @@ class Food {
         id: json["_id"],
         user: json["user"],
         thumbnail: json["thumbnail"],
-        thumbnail_url: json["thumbnail_url"],
+        thumbnailUrl: json["thumbnail_url"],
         name: json["name"],
         price: json["price"],
         description: json["description"],
@@ -56,7 +56,7 @@ class Food {
         "_id": id,
         "user": user,
         "thumbnail": thumbnail,
-        "thumbnail_url": thumbnail_url,
+        "thumbnail_url": thumbnailUrl,
         "name": name,
         "price": price,
         "description": description,

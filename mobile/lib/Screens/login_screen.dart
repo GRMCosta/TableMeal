@@ -117,9 +117,9 @@ class _LoginScreenState extends State<LoginScreen> {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Sucesso"),
       backgroundColor: Colors.green,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 1),
     ));
-    Future.delayed((Duration(seconds: 2))).then((_) {
+    Future.delayed((Duration(seconds: 1))).then((_) {
       Navigator.of(context).pop();
     });
   }
@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("CPF ou senha inválido"),
       backgroundColor: Colors.red,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 2),
     ));
   }
 }

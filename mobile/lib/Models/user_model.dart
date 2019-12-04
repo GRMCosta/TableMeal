@@ -9,6 +9,9 @@ class UserModel extends Model {
   bool isLoading = false;
   bool isLoggedIn = false;
 
+  static UserModel of(BuildContext context) =>
+      ScopedModel.of<UserModel>(context);
+
   void signUp(
       {@required String name,
       @required String email,

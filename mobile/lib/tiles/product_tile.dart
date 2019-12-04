@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/JDatas/foods_datas.dart';
+import 'package:mobile/Models/user_model.dart';
+import 'package:mobile/Models/cart_model.dart';
+import 'package:mobile/Screens/login_screen.dart';
+
 
 class ProductTile extends StatelessWidget {
   final FoodsList response;
   final int index;
 
+
   ProductTile(this.response, this.index);
 
+//Fazer o Scroll de Atualização
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,7 +23,7 @@ class ProductTile extends StatelessWidget {
           SizedBox(
             height: 100.0,
             child: Image.network(
-              response.foods[index].thumbnail_url,
+              response.foods[index].thumbnailUrl,
               fit: BoxFit.cover,
             ),
           ),
@@ -49,11 +55,21 @@ class ProductTile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              FlatButton(
-                child: Text("Adicionar ao carrinho"),
+              RaisedButton(
+                child: Text(UserModel.of(context).isLoggedIn
+                    ? "Adicionar ao Carrinho"
+                    : "Entre para comprar"),
                 textColor: Colors.blue,
                 padding: EdgeInsets.zero,
-                onPressed: () {},
+                onPressed: () {
+                  if (UserModel.of(context).isLoggedIn) {
+                    CartModel.of(context).addCartItem(response.foods[index]);
+                    print(CartModel.of(context).products.length);
+                  } else {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                  }
+                },
               )
             ],
           )

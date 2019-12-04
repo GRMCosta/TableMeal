@@ -125,9 +125,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Usuário criado com sucesso"),
       backgroundColor: Colors.green,
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 1),
     ));
-    Future.delayed(Duration(seconds: 2)).then((_) {
+    Future.delayed(Duration(seconds: 1)).then((_) {
       Navigator.of(context).pop();
     });
   }

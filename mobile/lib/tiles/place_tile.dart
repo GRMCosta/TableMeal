@@ -7,7 +7,7 @@ class PlaceTile extends StatelessWidget {
   final int index;
 
   PlaceTile(this.response,this.index);
-
+//Fazer o Scroll de Atualização
   @override
   Widget build(BuildContext context) {
     return Card(

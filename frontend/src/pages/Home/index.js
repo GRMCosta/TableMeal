@@ -32,10 +32,10 @@ export default function Home({ history }) {
                     <h1 className="animated fadeInUp ease-out-circ d2 a-1 f2 fw3">
                         Bem-vindo ao TableMeal !
                     </h1>
-                    <h2 class="animated fadeInUp ease-out-circ d-1 a-2">
+                    <h2 className="animated fadeInUp ease-out-circ d-1 a-2">
                         Crie seu cardápio e  se conecte com seus clientes !
                     </h2>
-                <dv className="box animated fadeInUp ease-out-circ d-1 a-2">
+                <div className="box animated fadeInUp ease-out-circ d-1 a-2">
                 <h2>
                         Está em um estabelecimento que possui TableMeal?
                     </h2>
@@ -43,7 +43,7 @@ export default function Home({ history }) {
                     Baixe o aplicativo agora mesmo e faça o seu pedido!
                     </h2>
                     <img src={alfa} alt="TableMeal" />
-                </dv>
+                </div>
             </div>
 
         </>

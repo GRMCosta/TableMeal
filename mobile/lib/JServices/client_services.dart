@@ -3,7 +3,7 @@ import 'package:mobile/JDatas/signup_datas.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 
-String _url = 'http://192.168.0.4:9999/clients';
+String _url = 'http://192.168.15.28:9999/clients';
 
 Future<http.Response> getClient(int cpf, String password) async {
   final response = await http.get('$_url?cpf=$cpf&password=$password');

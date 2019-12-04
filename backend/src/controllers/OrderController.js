@@ -34,6 +34,6 @@ module.exports = {
     //ATUALIZAR STATUS PEDIDO
      async update(req){
          const { id , status } = req.body;
-         await Order.findOneAndUpdate(id, {status : status });
+         await Order.findByIdAndUpdate(id, {status : status });
      }
 }

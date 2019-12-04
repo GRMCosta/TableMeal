@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e1ee656-df1b-4e47-b6cc-d3fd4af73493" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/src/controllers/FoodController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/controllers/FoodController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/controllers/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/controllers/OrderController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/controllers/SessionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/controllers/SessionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/models/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/models/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Food/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Food/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="0e1ee656-df1b-4e47-b6cc-d3fd4af73493" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +16,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mobile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -59,6 +50,7 @@
       <updated>1574285737411</updated>
       <workItem from="1574285738705" duration="31000" />
       <workItem from="1575141337131" duration="33000" />
+      <workItem from="1575414208620" duration="18000" />
     </task>
     <servers />
   </component>

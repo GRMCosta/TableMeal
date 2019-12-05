@@ -1,7 +1,9 @@
 const Client = require('../models/Client');
 
 module.exports = {
+//Funçoes do Cliente chamadas pelas APIs
 
+//Busca um Cliente pelo CPF e Senha
     async index(req,res){
         const { cpf,  password } = req.query;
         const client = await Client.findOne({ cpf , password });
@@ -14,7 +16,7 @@ module.exports = {
         }
     },
 
-
+//Cria um Cliente novo
     async store(req, res){
         const{ name, email, password, cpf} = req.body;
 

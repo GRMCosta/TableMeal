@@ -1,5 +1,5 @@
 const mongooese = require('mongoose');
-
+//Modelo Dono do Restaurante
 const UserSchema =  new mongooese.Schema({
     name: String,
     email: String,

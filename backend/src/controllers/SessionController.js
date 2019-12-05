@@ -4,12 +4,12 @@ const User = require('../models/User');
 module.exports = {
 
 
-    //PEGA TODOS OS RESTAURANTES
+    //Pega todos os restaurantes
     async index(req,res){
         allRestaurents = await User.find();
         return res.json(allRestaurents);
     },
-    //PEGA UM RESTAURANTE
+    //Pega um Restaurante pelo nome e senha
     async show(req,res){
         const { name, password } = req.query;
         const restaurant = await User.findOne({name, password
@@ -17,7 +17,7 @@ module.exports = {
         return res.json(restaurant);
     },
 
-    //CRIA UM NOVO RESTAURANTE
+    //Cria um novo Restaurante
     async store(req, res){
         const { name, email, password, cnpj } = req.body;
         // email = req.body.email ou o de cima

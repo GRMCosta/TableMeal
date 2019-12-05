@@ -4,14 +4,14 @@ const mongooese = require('mongoose');
 
 module.exports = {
 
-    //PEGAR TODOS OS PEDIDOS
+    //Pega todos os pedidos pelo ID
     async index(req,res){
         const { user_id } = req.query;
         const allOrders = await Order.find({foods: {$elemMatch: {user: mongooese.Types.ObjectId(user_id)}}});
         return res.json(allOrders);
     },
 //
-    //CRIAR UM NOVO PEDIDO
+    //Cria um novo Pedido
     async store(req, res){
         var allFoods;
         var objects = {};
@@ -31,7 +31,7 @@ module.exports = {
         return res.json(order);
     },
 
-    //ATUALIZAR STATUS PEDIDO
+    //Atualiza Status do Pedido
      async update(req, res){
          const { id , status } = req.query;
          console.log(req.query);

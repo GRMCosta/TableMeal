@@ -1,5 +1,5 @@
 const mongooese = require('mongoose');
-
+//Modelo Prato que será salvo no banco
 const FoodSchema = new mongooese.Schema({
     thumbnail: String,
     name: String,
@@ -16,7 +16,7 @@ const FoodSchema = new mongooese.Schema({
         virtuals: true,
     }
 });
-
+//Disponibiliza com o servidor as imagens de cada comida
 FoodSchema.virtual('thumbnail_url').get(function(){
     return `http://localhost:9999/files/${this.thumbnail}`
 })

@@ -6,13 +6,14 @@ const SessionController = require('./controllers/SessionController');
 const FoodController = require('./controllers/FoodController');
 const ClientController = require('./controllers/ClientConttroller');
 
-const routes = express.Router();
+const routes = express.Router(); 
 const upload = multer(uploadConfig);
 
-routes.get('/sessions', SessionController.index);
+//ROTAS DE TODAS AS APIS
+
+routes.get('/sessions', SessionController.index); 
 routes.get('/sessions/:name', SessionController.show);
 routes.post('/sessions', SessionController.store);
-
 
 routes.get('/clients', ClientController.index);
 routes.post('/clients', ClientController.store);

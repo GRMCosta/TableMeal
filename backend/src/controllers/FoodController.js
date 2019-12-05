@@ -3,14 +3,14 @@ const Food = require('../models/Food');
 
 module.exports = {
     
-    //CHAMA TODOS OS PRATOS DE DETERMINADO RESTAURANTE
+    //Chama todo os pratos de determinado restaurante
     async index(req,res){
         const { user_id } = req.headers;
         const allFoods = await Food.find({user : user_id});
         return res.json(allFoods);
     },
 
-    //CRIA UM NOVO PRATO
+    //Cria um novo Prato
     async store(req, res){
         
         const { filename } = req.file;
@@ -39,7 +39,7 @@ module.exports = {
         return res.json(food)
     },
 
-    //DELETA FOOD
+    //Deleta Prato pelo nome
     async delete(req,res){
         const { name } = req.query;
         await Food.deleteMany({name : name});

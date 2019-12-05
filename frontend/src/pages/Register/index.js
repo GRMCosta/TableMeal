@@ -13,16 +13,21 @@ export default function Login({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await api.post('/sessions', {
-      name,
-      email,
-      password,
-      cnpj
-    });
-    const { _id } = response.data;
-    sessionStorage.setItem('user', _id);
-    sessionStorage.setItem('name', name);
-    history.push('/food');
+    try{
+      const response = await api.post('/sessions', {
+        name,
+        email,
+        password,
+        cnpj
+      });
+      const { _id } = response.data;
+      sessionStorage.setItem('user', _id);
+      sessionStorage.setItem('name', name);
+      history.push('/food');
+    }catch(err){
+      alert("Nome já existente!");
+    }
+    
   }
 
   function menu() {

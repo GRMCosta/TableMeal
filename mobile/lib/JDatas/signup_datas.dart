@@ -5,7 +5,7 @@ SignUp postFromJson(String str) => SignUp.fromJson(json.decode(str));
 String postToJson(SignUp data) => json.encode(data.toJson());
 
 class SignUp {
-  int id;
+  String id;
   String name;
   String email;
   String password;

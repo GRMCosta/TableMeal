@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 
 Food foodFromJson(String str) => Food.fromJson(json.decode(str));
 
@@ -20,23 +19,23 @@ class FoodsList {
 
     return new FoodsList(foods: foods);
   }
-
-
 }
 
 class Food {
-  int id;
-  int user;
-  Image image;
+  String id;
+  String user;
+  String thumbnail;
+  String thumbnailUrl;
   String name;
-  int price;
+  double price;
   String description;
   String type;
 
   Food(
       {this.id,
       this.user,
-      this.image,
+      this.thumbnail,
+      this.thumbnailUrl,
       this.name,
       this.price,
       this.description,
@@ -45,7 +44,8 @@ class Food {
   factory Food.fromJson(Map<String, dynamic> json) => Food(
         id: json["_id"],
         user: json["user"],
-        image: json["image"],
+        thumbnail: json["thumbnail"],
+        thumbnailUrl: json["thumbnail_url"],
         name: json["name"],
         price: json["price"],
         description: json["description"],
@@ -55,7 +55,8 @@ class Food {
   Map<String, dynamic> toJson() => {
         "_id": id,
         "user": user,
-        "image": image,
+        "thumbnail": thumbnail,
+        "thumbnail_url": thumbnailUrl,
         "name": name,
         "price": price,
         "description": description,

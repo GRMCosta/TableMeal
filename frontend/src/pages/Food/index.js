@@ -66,7 +66,7 @@ export default function Food({ history }) {
                         <ul className="food-list">
                             {foods.filter(food => food.type === "Sobremesa").map((food) => (
                                 <li key={food._id}>
-                                    <div class="show-image">
+                                    <div className="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
                                         <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
                                     </div>
@@ -83,7 +83,7 @@ export default function Food({ history }) {
                         <ul className="food-list">
                             {foods.filter(food => food.type === "Prato").map((food) => (
                                 <li key={food._id}>
-                                    <div class="show-image">
+                                    <div className="show-image">
                                         <header style={{ backgroundImage: `url(${food.thumbnail_url})` }} />
                                         <img className="delete" type="button" src={logodelete} onClick={() => removeFood(food.name)} alt="delete" />
                                     </div>

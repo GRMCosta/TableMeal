@@ -13,8 +13,11 @@ Future<RestaurantsList> getUsers() async {
   return RestaurantsList.fromJson(json.decode(response.body));
 }
 
-Future<FoodsList> getFoods(int userId) async {
-  final response = await http.get('$_urlFoods?user_id=$userId');
+Future<FoodsList> getFoods(String userId) async {
+  final response = await http.get('$_urlFoods',
+  headers: {
+    "user_id": '$userId'
+  });
   return FoodsList.fromJson(json.decode(response.body));
 }
 

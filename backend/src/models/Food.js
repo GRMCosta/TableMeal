@@ -1,10 +1,7 @@
 const mongooese = require('mongoose');
-<<<<<<< HEAD
 //Modelo Prato que será salvo no banco
-=======
 var ip = require( 'ip' );
 
->>>>>>> 00d9a9c425d0837bb5812339a8d9371659daa19e
 const FoodSchema = new mongooese.Schema({
     thumbnail: String,
     name: String,

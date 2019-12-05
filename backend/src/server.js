@@ -10,12 +10,9 @@ const app = express();
 mongoose.connect('mongodb+srv://tableMeal:tableMeal@tablemeal-n6whx.mongodb.net/tableMeal?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-<<<<<<< HEAD
-}); // url do banco mongoatlas
-=======
     useFindAndModify: false
-});
->>>>>>> 00d9a9c425d0837bb5812339a8d9371659daa19e
+
+}); // url do banco mongoatlas
 
 // req.query = acessar query params (para filtros)
 // req.params = acessar route params ( para edição e delete)

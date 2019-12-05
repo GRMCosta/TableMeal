@@ -53,7 +53,7 @@ export default function Order({ history }) {
                             <th>Mesa</th>
                             <th>Status</th>
                         </tr>
-                        {orders.map((order) => (
+                        {orders.filter(order => order.status === "Aguardando").map((order) => (
                             <tr key={order._id}>
                                 <td>{order._id}</td>
                                 <td>{order.foods.map((food) => (food.name + ","))}</td>

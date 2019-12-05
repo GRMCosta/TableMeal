@@ -30,18 +30,10 @@ module.exports = {
         });
         return res.json(order);
     },
-
-<<<<<<< HEAD
     //Atualiza Status do Pedido
      async update(req, res){
-         const { id , status } = req.query;
-         console.log(req.query);
-         await Order.findByIdAndUpdate(id, {$set : status });
-=======
-    //ATUALIZAR STATUS PEDIDO
-     async update(req){
          const { id , status } = req.body;
          await Order.findByIdAndUpdate(id, {status : status });
->>>>>>> 00d9a9c425d0837bb5812339a8d9371659daa19e
+
      }
 }

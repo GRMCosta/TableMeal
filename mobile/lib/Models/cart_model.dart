@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class CartModel extends Model {
   UserModel user;
 
-  List<Food> products = [];
+  List<Map<String, dynamic>> products = [];
 
   CartModel(this.user);
 
@@ -14,12 +14,12 @@ class CartModel extends Model {
       ScopedModel.of<CartModel>(context);
 
   void addCartItem(Food food) {
-    products.add(food);
+    products.add(food.toJson());
     notifyListeners();
   }
 
   void removeCartItem(Food food) {
-    products.remove(food);
+    products.remove(food.toJson());
     notifyListeners();
   }
 

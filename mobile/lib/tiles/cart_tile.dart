@@ -64,6 +64,7 @@ class CartTile extends StatelessWidget {
                 onPressed: () {
                     CartModel.of(context).removeCartItem(response[index]);
                     print(CartModel.of(context).products.length);
+                    print(CartModel.of(context).products);
                 },
               )
             ],

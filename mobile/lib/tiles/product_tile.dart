@@ -67,6 +67,7 @@ class ProductTile extends StatelessWidget {
                   if (UserModel.of(context).isLoggedIn) {
                     CartModel.of(context).addCartItem(response.foods[index]);
                     print(CartModel.of(context).products.length);
+                    print(CartModel.of(context).products);
                   } else {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => LoginScreen()));

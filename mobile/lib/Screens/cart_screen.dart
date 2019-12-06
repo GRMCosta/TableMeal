@@ -20,14 +20,18 @@ class _CartScreenState extends State<CartScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text("Meu carrinho"), centerTitle: true,
-        leading: Container(
-          color: Colors.white,
-          alignment: Alignment.center,
-          child: TextFormField(
-            decoration: InputDecoration(hintText: "Mesa"),
-            controller: _tableController,
+        actions: <Widget>[
+          Container(
+            width: 100.0,
+            color: Colors.white,
+            alignment: Alignment.center,
+            child: TextFormField(
+              decoration: InputDecoration(hintText: "Mesa",),
+              controller: _tableController,
+              keyboardType: TextInputType.number,
+            ),
           ),
-        ),
+        ],
 
       ),
       body: ScopedModelDescendant<CartModel>(

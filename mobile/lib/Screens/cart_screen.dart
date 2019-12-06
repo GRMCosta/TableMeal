@@ -4,12 +4,31 @@ import 'package:mobile/Models/cart_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:mobile/tiles/cart_tile.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
+  @override
+  _CartScreenState createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+
+  static final _tableController = TextEditingController();
+  static final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("Meu carrinho"),
+        title: Text("Meu carrinho"), centerTitle: true,
+        leading: Container(
+          color: Colors.white,
+          alignment: Alignment.center,
+          child: TextFormField(
+            decoration: InputDecoration(hintText: "Mesa"),
+            controller: _tableController,
+          ),
+        ),
+
       ),
       body: ScopedModelDescendant<CartModel>(
         builder: (context, child, model) {
@@ -21,17 +40,46 @@ class CartScreen extends StatelessWidget {
                 childAspectRatio: 0.75,
               ),
               itemCount: model.products.length,
-              itemBuilder: (context, index) =>
-                  CartTile(model.products, index)
-          );
+              itemBuilder: (context, index) => CartTile(model.products, index));
         },
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Color.fromARGB(255, 97, 0, 0),
         child: RaisedButton(
-          child: Text("Enviar pedido"),
-          onPressed: (){CartModel.of(context).createOrder(2);}
-        ),
+            color: Colors.black,
+            child: Text(
+              "Enviar pedido",
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              if (_tableController.text.isNotEmpty) {
+                CartModel.of(context).createOrder(
+                    table: int.parse(_tableController.text),
+                    onFail: onFail,
+                    onSuccess: onSuccess);
+              } else {
+                _scaffoldKey.currentState.showSnackBar(SnackBar(
+                    content: Text("Por gentileza identifique a mesa"),
+                    backgroundColor: Colors.red,
+                    duration: Duration(seconds: 2)));
+              }
+            }),
       ),
     );
   }
-}
+
+  void onSuccess() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text("Pedido enviado com sucesso"),
+        backgroundColor: Colors.green,
+        duration: Duration(seconds: 2)));
+  }
+
+  void onFail() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text("Falha ao enviar pedido"),
+        backgroundColor: Colors.red,
+        duration: Duration(seconds: 2)));
+  }
+  }
+

@@ -5,9 +5,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:mobile/JDatas/restaurants_datas.dart';
 
-String _urlRestaurants = 'http://172.20.10.10:9999/sessions';
-String _urlFoods = 'http://172.20.10.10:9999/food';
-String _urlOrder = 'http://172.20.10.10:9999/order';
+String _urlRestaurants = 'http://192.168.0.4:9999/sessions';
+String _urlFoods = 'http://192.168.0.4:9999/food';
+String _urlOrder = 'http://192.168.0.4:9999/order';
 
 Future<RestaurantsList> getUsers() async {
   final response = await http.get('$_urlRestaurants');
@@ -21,7 +21,7 @@ Future<FoodsList> getFoods(String userId) async {
 }
 
 Future<http.Response> createPost(
-  List<Map<String, dynamic>> foodsList,
+  List<String> foodsList,
   int table,
 ) async {
 
@@ -30,7 +30,7 @@ Future<http.Response> createPost(
   },
       body: json.encode({
     "table": '$table',
-    "foods": '$foodsList',
+    "foods": foodsList,
   })
   );
 

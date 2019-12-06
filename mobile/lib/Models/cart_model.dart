@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class CartModel extends Model {
   UserModel user;
 
-  List<Map<String, dynamic>> productsJson = [];
+  List<String> productsJson = [];
   List<Food> products = [];
 
   CartModel(this.user);
@@ -15,19 +15,30 @@ class CartModel extends Model {
   static CartModel of(BuildContext context) =>
       ScopedModel.of<CartModel>(context);
 
-  void createOrder(int table){
-    createPost(productsJson, table);
+  void createOrder(
+      {@required int table,
+      @required VoidCallback onSuccess,
+      @required VoidCallback onFail}) {
 
+    createPost(productsJson, table).then((response)
+    {if(!response.body.contains("error")){
+      onSuccess();
+      removeAllCart();
+      notifyListeners();}
+      else{
+        onFail();
+    }
+    });
   }
 
   void addCartItem(Food food) {
-    productsJson.add(food.toJson());
+    productsJson.add(food.id);
     products.add(food);
     notifyListeners();
   }
 
   void removeCartItem(Food food) {
-    productsJson.remove(food.toJson());
+    productsJson.remove(food.id);
     products.add(food);
     notifyListeners();
   }

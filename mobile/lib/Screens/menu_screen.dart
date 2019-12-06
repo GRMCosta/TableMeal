@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/JDatas/foods_datas.dart';
 import 'package:mobile/JServices/restaurant_services.dart';
 import 'package:mobile/tiles/product_tile.dart';
+import 'package:mobile/widgets/cart_button.dart';
 
 class MenuScreen extends StatelessWidget {
   final String userId;
@@ -23,11 +24,18 @@ class MenuScreen extends StatelessWidget {
               title: Text("Cardápio", style: TextStyle(color: Colors.white),),
               backgroundColor: Color.fromARGB(255, 97, 0, 0),
             ),
-            body: ListView.builder(
+            body: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 4.0,
+                crossAxisSpacing: 4.0,
+                childAspectRatio: 0.75,
+              ),
                 itemCount: snapshot.data.foods.length,
                 itemBuilder: (context, index) =>
                     ProductTile(snapshot.data, index)
             ),
+            floatingActionButton: CartButton(),
           );
       },
     );

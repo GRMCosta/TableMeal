@@ -114,6 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
   void _onSuccess() {
+    _clearInputs();
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Sucesso"),
       backgroundColor: Colors.green,
@@ -122,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Future.delayed((Duration(seconds: 1))).then((_) {
       Navigator.of(context).pop();
     });
+    _clearInputs();
   }
 
   void _onFail() {
@@ -130,5 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.red,
       duration: Duration(seconds: 2),
     ));
+  }
+  void _clearInputs(){
+    _passController.clear();
+    _cpfController.clear();
   }
 }

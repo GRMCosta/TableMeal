@@ -19,14 +19,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
+        key: _scaffoldKey,
         appBar: AppBar(
           title: Text(
             "Criar Conta",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
-          backgroundColor: Colors.red,
         ),
         backgroundColor: Colors.white,
         body:
@@ -34,8 +33,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           if (model.isLoading)
             return Scaffold(
                 body: Center(
-                  child: CircularProgressIndicator(),
-                ));
+              child: CircularProgressIndicator(),
+            ));
           return Form(
             key: _formKey,
             child: ListView(
@@ -100,7 +99,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     textColor: Colors.white,
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 97, 0, 0),
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         model.signUp(
@@ -130,6 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     Future.delayed(Duration(seconds: 1)).then((_) {
       Navigator.of(context).pop();
     });
+    _clearInputs();
   }
 
   void _onFail() {
@@ -138,5 +138,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.red,
       duration: Duration(seconds: 5),
     ));
+  }
+
+  void _clearInputs() {
+    _passController.clear();
+    _cpfController.clear();
+    _nameController.clear();
+    _emailController.clear();
   }
 }

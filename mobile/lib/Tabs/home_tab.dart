@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeTab extends StatefulWidget {
@@ -8,36 +9,9 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
-
-    Widget _buildBodyBack() => Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.red,
-              Color.fromARGB(255, 97, 0, 0),
-            ],
-            begin: Alignment.center,
-            end: Alignment.bottomCenter,
-          )),
-    );
-
-    return Stack(
+    return Column(
       children: <Widget>[
-        _buildBodyBack(),
-        CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              floating: true,
-              snap: true,
-              backgroundColor: Colors.transparent,
-              elevation: 0.0,
-              flexibleSpace: FlexibleSpaceBar(
-                title: const Text("TableMeal"),
-                centerTitle: true,
-              ),
-            ),
-          ],
-        )
+
       ],
     );
   }

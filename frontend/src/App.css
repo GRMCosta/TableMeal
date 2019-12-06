@@ -41,8 +41,9 @@ body, input, button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
+
+
 
 .masterContainer img{
   width: 10%;

@@ -5,7 +5,8 @@ import logo from '../../assets/logo.png'
 import './styles.css'
 
 
-export default function Order({ history }) {
+export default function Historic({ history }) {
+    console.log("ola")
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         async function loadOrders() {
@@ -20,16 +21,6 @@ export default function Order({ history }) {
         
     }, []);
 
-    async function statusOrder(id) {
-        const newOrders = orders.filter((order) => {
-            return order._id !== id;
-        });
-        setOrders(newOrders);
-        await api.put('/order',{
-            id,
-            status: "Enviado"
-        });
-    }
 
     function menu() {
         history.push('/');
@@ -43,15 +34,12 @@ export default function Order({ history }) {
     function pedidos() {
         history.push('/orders');
     }
-    function historico() {
-        history.push('/historic');
-    }
 
     return (
         <>
             <NavBar menu={() => menu()} sair={() => sair()} cardapio={() => cardapio()} pedidos={() => pedidos()} />
             <div className="imageDiv">
-                <img id="orderImage" src={logo} alt="TableMeal" onClick={historico} />
+                <img id="orderImage" src={logo} alt="TableMeal" onClick={pedidos} />
             </div>
             <div className="content2">
                 <table>
@@ -62,17 +50,12 @@ export default function Order({ history }) {
                             <th>Mesa</th>
                             <th>Status</th>
                         </tr>
-                        {orders.filter(order => order.status === "Aguardando").map((order) => (
+                        {orders.map((order) => (
                             <tr key={order._id}>
                                 <td>{order._id}</td>
                                 <td>{order.foods.map((food) => (food.name + ","))}</td>
                                 <td>{order.table}</td>
-                                <td>
-                                    <select id="status" onChange={() => statusOrder(order._id)}  >
-                                        <option value="Aguardando">Aguardando...</option>
-                                        <option value="Pedido Enviado!">Enviar Pedido</option>
-                                    </select>
-                                </td>
+                                <td>{order.status}</td>
                             </tr>
                         ))}
                     </tbody>

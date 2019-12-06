@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Food from './pages/Food';
 import New from './pages/New';
 import Orders from './pages/Orders';
+import Historic from './pages/Historic';
 
 export default function Routes(){
     return(<BrowserRouter>
@@ -19,6 +20,7 @@ export default function Routes(){
             <Route path="/food" component={Food} />
             <Route path="/new" component={New} />
             <Route path="/orders" component={Orders} />
+            <Route path="/historic" component={Historic} />
         </Switch>
     </BrowserRouter>
     );

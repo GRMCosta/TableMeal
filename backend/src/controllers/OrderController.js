@@ -17,7 +17,9 @@ module.exports = {
         var objects = {};
         var order;
         const { table, foods } = req.body;
-        await Food.find({_id: {$in: foods}}, function(err, array){
+        var food1 = foods.filter(food => food.id)
+        console.log(food1);
+        Food.find({_id: {$in: food1}}, function(err, array){
             array.forEach(o => objects[o._id] = o);
             allFoods = foods.map(id => objects[id]);
             order = Order.create({

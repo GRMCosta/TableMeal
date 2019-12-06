@@ -10,16 +10,15 @@ module.exports = {
         const allOrders = await Order.find({foods: {$elemMatch: {user: mongooese.Types.ObjectId(user_id)}}});
         return res.json(allOrders);
     },
-//
+
     //Cria um novo Pedido
     async store(req, res){
         var allFoods;
         var objects = {};
         var order;
         const { table, foods } = req.body;
-        var food1 = foods.filter(food => food.id)
-        console.log(food1);
-        Food.find({_id: {$in: food1}}, function(err, array){
+        console.log(foods)
+        Food.find({_id: {$in: foods}}, function(err, array){
             array.forEach(o => objects[o._id] = o);
             allFoods = foods.map(id => objects[id]);
             order = Order.create({

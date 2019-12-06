@@ -13,6 +13,7 @@ label#thumbnail {
 
 label#thumbnail input {
     display: none;
+    align-self: center;
 }
 
 label#thumbnail.has-thumbnail {

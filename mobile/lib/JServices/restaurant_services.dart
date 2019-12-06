@@ -5,9 +5,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:mobile/JDatas/restaurants_datas.dart';
 
-String _urlRestaurants = 'http://192.168.0.4:9999/sessions';
-String _urlFoods = 'http://192.168.0.4:9999/food';
-String _urlOrder = 'http://192.168.0.4:9999/order';
+String _urlRestaurants = 'http://10.0.2.2:9999/sessions';
+String _urlFoods = 'http://10.0.2.2:9999/food';
+String _urlOrder = 'http://10.0.2.2:9999/order';
 
 Future<RestaurantsList> getUsers() async {
   final response = await http.get('$_urlRestaurants');

@@ -29,7 +29,7 @@ class CartScreen extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           child: Text("Enviar pedido"),
-          onPressed: (){createOrder(CartModel.of(context).products, 2);}
+          onPressed: (){CartModel.of(context).createOrder(2);}
         ),
       ),
     );

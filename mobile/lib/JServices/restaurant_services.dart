@@ -20,8 +20,8 @@ Future<FoodsList> getFoods(String userId) async {
   return FoodsList.fromJson(json.decode(response.body));
 }
 
-Future<http.Response> createOrder(
-  List<Food> foodsList,
+Future<http.Response> createPost(
+  List<Map<String, dynamic>> foodsList,
   int table,
 ) async {
 

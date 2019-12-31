@@ -7,7 +7,7 @@ const app = express();
 
 
 
-mongoose.connect('mongodb+srv://tableMeal:tableMeal@tablemeal-n6whx.mongodb.net/tableMeal?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://tableMeal:<password>@tablemeal-n6whx.mongodb.net/tableMeal?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
